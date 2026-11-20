@@ -41,13 +41,14 @@ INSTALLED_APPS = [
     'tienda',
 ]
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # Si usas whitenoise para estáticos en Render
+    'django.contrib.sessions.middleware.SessionMiddleware',  # <--- Agrega esta línea aquí
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware', # <--- Debe ir después de SessionMiddleware
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
